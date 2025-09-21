@@ -12,12 +12,6 @@ importers:
         specifier: ^8.2.4
         version: 8.2.4(encoding@0.1.13)
 
-  packages/cli: {}
-
-  packages/hooks: {}
-
-  packages/libs: {}
-
   packages/lkk-hooks:
     dependencies:
       '@lkk/libs':
