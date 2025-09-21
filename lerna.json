@@ -1,5 +1,33 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "0.0.0",
-  "npmClient": "pnpm"
+  "npmClient": "pnpm",
+  "packages": [
+    "apps/*",
+    "packages/*"
+  ],
+  "ignoreChanges": [
+    "**/*.md",
+    "**/*.test.{js,ts}",
+    "**/*.spec.{js,ts}",
+    "**/test/**",
+    "**/tests/**",
+    "**/__tests__/**",
+    "**/docs/**",
+    "**/.gitignore",
+    "**/jest.config.*",
+    "**/tsconfig.json"
+  ],
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "registry": "http://43.252.229.237:4873"
+    },
+    "version": {
+      "allowBranch": ["main", "release/*"],
+      "conventionalCommits": true,
+      "message": "chore(release): %s"
+    }
+  }
 }
