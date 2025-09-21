@@ -8,7 +8,7 @@
     "dev": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "likaikai <593496637@qq.com>",
   "license": "ISC",
   "packageManager": "pnpm@10.16.1",
   "dependencies": {
