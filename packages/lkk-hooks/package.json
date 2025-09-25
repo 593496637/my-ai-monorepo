@@ -1,17 +1,36 @@
 {
   "name": "@lkk/hooks",
   "version": "1.0.3",
-  "description": "",
-  "main": "index.js",
+  "description": "Web3 钱包操作 React Hooks 库，包含 MetaMask 集成和状态管理功能",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "clean": "rm -rf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "likaikai <593496637@qq.com>",
   "license": "ISC",
   "packageManager": "pnpm@10.16.1",
   "dependencies": {
-    "@lkk/libs": "workspace:*"
+    "@lkk/libs": "workspace:*",
+    "react": "^18.0.0",
+    "use-immer": "^0.9.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.0.0",
+    "rollup": "^4.9.6",
+    "typescript": "^5.3.3"
   }
 }

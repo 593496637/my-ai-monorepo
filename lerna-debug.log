@@ -1,9 +1,0 @@
-17 error Error: Command failed with exit code 1: git remote update
-17 error fatal: unable to access 'https://github.com/593496637/my-ai-monorepo.git/': LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
-17 error     at makeError (/Users/likaikai/一灯/第七周-9.20,9.21/作业/my-ai-monorepo/node_modules/.pnpm/execa@5.0.0/node_modules/execa/lib/error.js:59:11)
-17 error     at module.exports.sync (/Users/likaikai/一灯/第七周-9.20,9.21/作业/my-ai-monorepo/node_modules/.pnpm/execa@5.0.0/node_modules/execa/index.js:186:17)
-17 error     at Object.execSync (/Users/likaikai/一灯/第七周-9.20,9.21/作业/my-ai-monorepo/node_modules/.pnpm/lerna@8.2.4_encoding@0.1.13/node_modules/lerna/dist/index.js:1754:31)
-17 error     at updateRemote (/Users/likaikai/一灯/第七周-9.20,9.21/作业/my-ai-monorepo/node_modules/.pnpm/lerna@8.2.4_encoding@0.1.13/node_modules/lerna/dist/index.js:9426:18)
-17 error     at isBehindUpstream (/Users/likaikai/一灯/第七周-9.20,9.21/作业/my-ai-monorepo/node_modules/.pnpm/lerna@8.2.4_encoding@0.1.13/node_modules/lerna/dist/index.js:9416:3)
-17 error     at VersionCommand.initialize (/Users/likaikai/一灯/第七周-9.20,9.21/作业/my-ai-monorepo/node_modules/.pnpm/lerna@8.2.4_encoding@0.1.13/node_modules/lerna/dist/index.js:9710:57)
-17 error     at VersionCommand.runCommand (/Users/likaikai/一灯/第七周-9.20,9.21/作业/my-ai-monorepo/node_modules/.pnpm/lerna@8.2.4_encoding@0.1.13/node_modules/lerna/dist/index.js:3520:36)

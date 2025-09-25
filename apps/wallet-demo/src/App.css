@@ -1,0 +1,877 @@
+/* 全局样式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头部样式 */
+.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.app-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* 主内容区域 */
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.demo-section.full-width {
+  grid-column: 1 / -1;
+}
+
+/* 演示区块样式 */
+.demo-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.demo-section h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+/* 按钮样式 */
+button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.connect-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.disconnect-btn {
+  background: linear-gradient(45deg, #f44336, #da190b);
+  color: white;
+}
+
+.send-btn {
+  background: linear-gradient(45deg, #2196F3, #0b7dda);
+  color: white;
+}
+
+.refresh-btn, .reset-btn {
+  background: linear-gradient(45deg, #ff9800, #e68900);
+  color: white;
+}
+
+.action-btn {
+  background: linear-gradient(45deg, #9c27b0, #7b1fa2);
+  color: white;
+}
+
+.update-btn {
+  background: linear-gradient(45deg, #607d8b, #455a64);
+  color: white;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.copy-btn {
+  background: #e0e0e0;
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.explorer-btn {
+  background: linear-gradient(45deg, #673ab7, #512da8);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 表单样式 */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* 钱包连接组件样式 */
+.connect-section, .connected-section {
+  text-align: center;
+}
+
+.wallet-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.wallet-info p {
+  margin-bottom: 0.5rem;
+}
+
+.wallet-info code {
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+/* 余额显示样式 */
+.balance-main {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.balance-amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.balance-details {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.balance-raw {
+  display: block;
+  background: #e9ecef;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.8rem;
+  word-break: break-all;
+  margin-top: 0.5rem;
+}
+
+/* 交易状态样式 */
+.transaction-status {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.status-dot {
+  font-size: 1.5rem;
+}
+
+.status-text {
+  font-weight: 600;
+}
+
+.transaction-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.tx-hash {
+  margin-bottom: 1rem;
+}
+
+.hash-container {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.hash-container code {
+  background: #e9ecef;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  flex: 1;
+}
+
+/* 状态管理样式 */
+.state-overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.state-summary p {
+  margin-bottom: 0.5rem;
+}
+
+.pending-transactions, .transaction-history {
+  margin-top: 2rem;
+}
+
+.transaction-list, .history-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.transaction-item, .history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.tx-info, .tx-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.tx-description {
+  font-weight: 600;
+}
+
+.tx-hash {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.tx-time {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.tx-status {
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.raw-state {
+  margin-top: 2rem;
+}
+
+.state-json {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* 错误信息样式 */
+.error-message {
+  background: #ffebee;
+  border: 1px solid #ffcdd2;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.install-link {
+  display: inline-block;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.install-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 底部样式 */
+.app-footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.feature-list ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.feature-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.badge {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* 网络切换器样式 */
+.network-switcher .current-network {
+  margin-bottom: 2rem;
+}
+
+.network-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.network-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.network-type {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.chain-id {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.8rem;
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+
+.network-options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.network-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.network-option:hover:not(:disabled) {
+  border-color: #667eea;
+  background: #f0f4ff;
+}
+
+.network-option.current {
+  border-color: #4CAF50;
+  background: #f1f8e9;
+}
+
+.network-option.testnet {
+  border-left: 4px solid #ff9800;
+}
+
+.network-option.mainnet {
+  border-left: 4px solid #2196F3;
+}
+
+.network-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.network-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.network-symbol {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.network-status {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.current-indicator {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.testnet-badge {
+  background: #ff9800;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.switching-indicator {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.network-utils-demo {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.config-display {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.network-type-result {
+  color: #4CAF50;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* 工具函数演示样式 */
+.utils-demo .demo-section {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.utils-demo .demo-section:last-child {
+  border-bottom: none;
+}
+
+.demo-item {
+  margin-bottom: 1rem;
+}
+
+.demo-item label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.demo-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9rem;
+}
+
+.demo-results {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.result-row:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.result-row strong {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.result-row code {
+  background: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+
+.valid {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.invalid {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.preset-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.preset-btn {
+  background: linear-gradient(45deg, #9c27b0, #7b1fa2);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.preset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 事件日志样式 */
+.event-logger {
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logger-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.max-logs-select {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.test-btn {
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.clear-btn {
+  background: linear-gradient(45deg, #f44336, #da190b);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.logs-container {
+  flex: 1;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.no-logs {
+  text-align: center;
+  color: #666;
+  padding: 2rem;
+}
+
+.log-entry {
+  background: white;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #e0e0e0;
+  transition: all 0.2s ease;
+}
+
+.log-entry:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.log-entry.info {
+  border-left-color: #2196F3;
+}
+
+.log-entry.success {
+  border-left-color: #4CAF50;
+}
+
+.log-entry.warning {
+  border-left-color: #ff9800;
+}
+
+.log-entry.error {
+  border-left-color: #f44336;
+}
+
+.log-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.log-icon {
+  font-size: 1rem;
+}
+
+.log-time {
+  font-size: 0.8rem;
+  color: #666;
+  font-family: 'Monaco', 'Menlo', monospace;
+}
+
+.log-type {
+  background: #e0e0e0;
+  color: #333;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.log-message {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.log-data {
+  margin-top: 0.5rem;
+}
+
+.log-data summary {
+  cursor: pointer;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.log-data pre {
+  background: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.logger-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.log-count {
+  color: #666;
+}
+
+.connection-status {
+  font-weight: 600;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
+
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-section {
+    padding: 1.5rem;
+  }
+
+  .state-overview {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .app-footer {
+    flex-direction: column;
+  }
+
+  .tech-badges {
+    justify-content: center;
+  }
+}
