@@ -1,6 +1,6 @@
 {
   "name": "@lkk/hooks",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Web3 钱包操作 React Hooks 库，包含 MetaMask 集成和状态管理功能",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

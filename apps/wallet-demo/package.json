@@ -1,6 +1,6 @@
 {
   "name": "wallet-demo",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Web3 钱包 Hooks 演示应用",
   "private": true,
   "scripts": {

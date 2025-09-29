@@ -9,27 +9,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 * complete TypeScript migration and comprehensive documentation ([b5d49d0](https://github.com/593496637/my-ai-monorepo/commit/b5d49d08b34655c6eff758b2ad773873a5ff74eb))
-
-
-
-
-
-## [1.0.3](https://github.com/593496637/my-ai-monorepo/compare/v1.0.2...v1.0.3) (2025-09-21)
-
-**Note:** Version bump only for package @lkk/libs
-
-
-
-
-
-## 1.0.2 (2025-09-21)
-
-**Note:** Version bump only for package @lkk/libs
-
-
-
-
-
-## 1.0.1 (2025-09-21)
-
-**Note:** Version bump only for package @lkk/libs
