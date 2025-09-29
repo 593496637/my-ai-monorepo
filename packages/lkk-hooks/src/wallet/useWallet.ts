@@ -56,8 +56,8 @@ const useWallet = (): UseWalletReturn => {
   // 检查 MetaMask 是否安装
   const isMetaMaskInstalled = useCallback((): boolean => {
     return typeof window !== 'undefined' &&
-           typeof window.ethereum !== 'undefined' &&
-           window.ethereum.isMetaMask === true;
+      typeof window.ethereum !== 'undefined' &&
+      window.ethereum.isMetaMask === true;
   }, []);
 
   // 连接钱包

@@ -1,5 +1,5 @@
 /**
- * 以太坊单位转换工具函数
+ * 以太坊单位转换工具函数哈
  */
 
 /**
@@ -21,11 +21,11 @@ export function formatEther(weiValue: string | number): string {
   }
 
   // 使用 BigInt 进行精确计算
-  const etherBigInt = wei / BigInt(10**18);
-  const remainder = wei % BigInt(10**18);
+  const etherBigInt = wei / BigInt(10 ** 18);
+  const remainder = wei % BigInt(10 ** 18);
 
   // 转换为小数
-  const etherValue = Number(etherBigInt) + Number(remainder) / (10**18);
+  const etherValue = Number(etherBigInt) + Number(remainder) / (10 ** 18);
 
   return etherValue.toFixed(6);
 }
@@ -39,7 +39,7 @@ export function parseEther(etherValue: string | number): string {
   const ether = typeof etherValue === 'string' ? parseFloat(etherValue) : etherValue;
 
   // 使用 BigInt 进行精确计算
-  const weiValue = BigInt(Math.floor(ether * (10**18)));
+  const weiValue = BigInt(Math.floor(ether * (10 ** 18)));
 
   return '0x' + weiValue.toString(16);
 }

@@ -37,7 +37,7 @@ const useBalance = (
   const getTokenBalance = useCallback(async (address: string, tokenAddress: string): Promise<string> => {
     // 这里是简化实现，实际项目中需要使用ethers.js或web3.js
     // 以及ERC20合约的ABI来调用balanceOf方法
-    console.log('Token balance query not implemented in demo');
+    console.log('Token balance query not implemented in demo !');
     return '0';
   }, []);
 
