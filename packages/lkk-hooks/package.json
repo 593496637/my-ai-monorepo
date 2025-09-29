@@ -10,9 +10,17 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "web3",
+    "ethereum",
+    "wallet",
+    "react-hooks",
+    "metamask",
+    "blockchain"
+  ],
   "author": "likaikai <593496637@qq.com>",
   "license": "ISC",
   "packageManager": "pnpm@10.16.1",
