@@ -1,0 +1,33 @@
+/**
+ * @lkk/ui 全局样式
+ */
+
+/* CSS 变量定义 */
+:root {
+  /* 主题色 */
+  --lkk-primary-color: #1677ff;
+  --lkk-success-color: #52c41a;
+  --lkk-warning-color: #faad14;
+  --lkk-error-color: #ff4d4f;
+  
+  /* 文字颜色 */
+  --lkk-text-color: rgba(0, 0, 0, 0.88);
+  --lkk-text-secondary: rgba(0, 0, 0, 0.65);
+  --lkk-text-tertiary: rgba(0, 0, 0, 0.45);
+  
+  /* 边框 */
+  --lkk-border-color: #d9d9d9;
+  --lkk-border-radius: 6px;
+  
+  /* 间距 */
+  --lkk-spacing-xs: 4px;
+  --lkk-spacing-sm: 8px;
+  --lkk-spacing-md: 16px;
+  --lkk-spacing-lg: 24px;
+  --lkk-spacing-xl: 32px;
+}
+
+/* 重置样式 */
+* {
+  box-sizing: border-box;
+}
