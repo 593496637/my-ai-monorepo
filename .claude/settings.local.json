@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(pnpm dev:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 重新创建 lkk-ui 组件库\n\n- 使用 React 19 + TypeScript + Vite 重建项目\n- 集成 Storybook 9.1.8 及相关插件\n  - addon-docs: 文档支持\n  - addon-a11y: 无障碍测试\n  - addon-vitest: 测试集成\n  - addon-onboarding: 新手引导\n- 配置 Vitest 浏览器测试 (Playwright)\n- 添加示例组件 (Button, Header, Page)\n- 更新依赖版本到最新稳定版\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []
